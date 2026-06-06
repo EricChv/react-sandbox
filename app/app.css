@@ -51,9 +51,10 @@ form {
   @apply flex flex-col items-start gap-8 w-full;
 }
 
+/* Class names that can be re-utilized on any component*/
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#5B7CFF] via-[#8B5CF6] to-[#5EEAD4];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
   }
   .gradient-border {
     @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
@@ -127,7 +128,7 @@ form {
 }
 
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#5B7CFF] via-[#8B5CF6] to-[#5EEAD4];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#6b6e6e] via-[#000000] to-[#6b6e6e];
 }
 
 @utility gradient-hover {
