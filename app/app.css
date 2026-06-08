@@ -1,170 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Geist:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
-@import "tw-animate-css";
-
-@theme {
-  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-dark-200: #475467;
-
-  /* Apple Intelligence-style glow colors */
-  --color-light-blue-100: #5b7cff1a;
-  --color-light-blue-200: #8b5cf64d;
-
-  --color-badge-green: #d5faf1;
-  --color-badge-red: #f9e3e2;
-  --color-badge-yellow: #fceed8;
-
-  --color-badge-green-text: #254d4a;
-  --color-badge-red-text: #752522;
-  --color-badge-yellow-text: #73321b;
-}
 
 html,
 body {
-  @apply bg-white;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #111111;
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
 }
 
 main {
-  @apply min-h-screen pt-10;
+  min-height: 100vh;
 }
+
 h1 {
-  @apply max-sm:text-[3rem] text-6xl  text-gradient leading-tight xl:tracking-[-2px] font-semibold;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #111111;
 }
 
 h2 {
-  @apply max-sm:text-xl text-3xl text-dark-200;
+  font-size: clamp(1.25rem, 2vw, 1.875rem);
+  line-height: 1.2;
+  color: #111111;
 }
 
-label {
-  @apply text-dark-200;
-}
-input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
-}
-
-textarea {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
-form {
-  @apply flex flex-col items-start gap-8 w-full;
-}
-
-/* Class names that can be re-utilized on any component*/
-@layer components {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
-  }
-  .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
-  }
-  .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
-  }
-  .resume-nav {
-    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
-  }
-  .resume-summary {
-    @apply flex flex-row items-center justify-center p-4 gap-4;
-    .category {
-      @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
-    }
-  }
-  .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
-  }
-  .auth-button {
-    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
-  }
-  .main-section {
-    @apply flex flex-col items-center gap-8 pt-12 max-sm:mx-2 mx-15 pb-5;
-  }
-  .page-heading {
-    @apply flex flex-col items-center gap-8 max-w-4xl text-center max-sm:gap-4;
-  }
-  .resumes-section {
-    @apply flex flex-wrap max-md:flex-col max-md:gap-4 gap-6 items-start max-md:items-center w-full max-w-[1850px] justify-evenly;
-  }
-
-  .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-[350px] lg:w-[430px] xl:w-[490px] bg-white rounded-2xl p-4;
-  }
-
-  .resume-card-header {
-    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
-  }
-
-  .feedback-section {
-    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
-  }
-
-  .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
-  }
-
-  .score-badge {
-    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
-  }
-
-  .form-div {
-    @apply flex flex-col gap-2 w-full items-start;
-  }
-
-  .uplader-drag-area {
-    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
-  }
-  .uploader-selected-file {
-    @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
-  }
-}
-
-@utility bg-gradient {
-  background: linear-gradient(
-    to bottom,
-    #f8faff 60%,
-    #8b5cf622
-  );
-}
-
-@utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#6b6e6e] via-[#000000] to-[#6b6e6e];
-}
-
-@utility gradient-hover {
-  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
-}
-
-@utility primary-gradient {
-  background: linear-gradient(
-    to bottom,
-    #7c6dff,
-    #5b7cff
-  );
-
-  box-shadow:
-    0 10px 30px rgba(91, 124, 255, 0.25),
-    0 4px 12px rgba(139, 92, 246, 0.18);
-}
-
-@utility primary-gradient-hover {
-  background: linear-gradient(
-    to bottom,
-    #8b5cf6,
-    #5b7cff
-  );
-}
-
-@utility inset-shadow {
-  box-shadow: inset 0 0 12px 0 rgba(91, 124, 255, 0.15);
-  backdrop-filter: blur(10px);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  background: #111111;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #111111;
 }
