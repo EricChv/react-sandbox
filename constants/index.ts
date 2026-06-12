@@ -1,12 +1,104 @@
+// interface created within /types
+
 export const resumes: Resume[] = [
   {
     id: "1",
-    companyName: "Google",
-    jobTitle: "Frontend Developer",
+    companyName: "Amazon",
+    jobTitle: "Backend Developer",
     imagePath: "/images/resume-1.png",
     resumePath: "/resumes/resume-1.pdf",
     feedback: {
       overallScore: 85,
+      ATS: {
+        score: 90,
+        tips: [],
+      },
+      toneAndStyle: {
+        score: 90,
+        tips: [],
+      },
+      content: {
+        score: 90,
+        tips: [],
+      },
+      structure: {
+        score: 90,
+        tips: [],
+      },
+      skills: {
+        score: 90,
+        tips: [],
+      },
+    },
+  },
+  {
+    id: "2",
+    companyName: "Salesforce",
+    jobTitle: "DevOps Engineer",
+    imagePath: "/images/resume-2.png",
+    resumePath: "/resumes/resume-2.pdf",
+    feedback: {
+      overallScore: 55,
+      ATS: {
+        score: 90,
+        tips: [],
+      },
+      toneAndStyle: {
+        score: 90,
+        tips: [],
+      },
+      content: {
+        score: 90,
+        tips: [],
+      },
+      structure: {
+        score: 90,
+        tips: [],
+      },
+      skills: {
+        score: 90,
+        tips: [],
+      },
+    },
+  },
+  {
+    id: "3",
+    companyName: "Cisco",
+    jobTitle: "Network Engineer",
+    imagePath: "/images/resume-3.png",
+    resumePath: "/resumes/resume-3.pdf",
+    feedback: {
+      overallScore: 75,
+      ATS: {
+        score: 90,
+        tips: [],
+      },
+      toneAndStyle: {
+        score: 90,
+        tips: [],
+      },
+      content: {
+        score: 90,
+        tips: [],
+      },
+      structure: {
+        score: 90,
+        tips: [],
+      },
+      skills: {
+        score: 90,
+        tips: [],
+      },
+    },
+  },
+  {
+    id: "4",
+    companyName: "Microsoft",
+    jobTitle: "Data Analyst",
+    imagePath: "/images/resume-4.png",
+    resumePath: "/resumes/resume-4.pdf",
+    feedback: {
+      overallScore: 75,
       ATS: {
         score: 90,
         tips: [],
@@ -41,7 +133,8 @@ Return ONLY valid JSON in this exact structure:
     "tips": [
       {
         "type": "good | improve",
-        "tip": "string"
+        "tip": "Short title"
+        "explanation": "detailed explanation"
       }
     ]
   },
